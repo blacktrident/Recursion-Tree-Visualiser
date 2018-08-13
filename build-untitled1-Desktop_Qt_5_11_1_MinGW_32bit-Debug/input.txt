@@ -1,0 +1,39 @@
+while(1){
+              l=in.readLine();
+                int k=0;
+                int j=0;
+                bool done=0;
+                if(((k = l.indexOf("return", k)) != -1)&&m){
+                    cout<<k<<endl;
+                    l.replace(k,6,"int y= ");
+                    QString t3=l;
+                    l.push_back('\n');
+                    v.push_back(l);
+                    v.push_back("cout<<x<<\"$\"<<y<<endl; \n");
+                    v.push_back("return y;\n");
+                    done=1;
+                    l=t3;
+                }
+                if(((j = l.indexOf("rec", j)) != -1)&&m&&!done){
+
+                    if(!firstoccc){
+                        l.push_back('\n');
+                        v.push_back(l);
+                        v.push_back(Ins1());
+                        firstoccc=1;
+                    }else{
+                        cout<<"HERE"<<endl;
+                        l.append(" current++ ; \n");
+                        QString temp=Ins2();
+                        v.push_back(temp);
+                        v.push_back(l);
+                    }
+                    done=1;
+                }
+                if(!done){
+                    if(l.indexOf("main",0)!=-1) m=0;
+                    l.push_back('\n');
+                    v.push_back(l);
+                }
+               if(in.atEnd()) break;
+        }
